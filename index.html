@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random RGB Color Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      transition: background-color 0.5s;
+    }
+    #color-code {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>Random RGB Color Generator</h1>
+    <button onclick="generateColor()">Generate Color</button>
+    <p id="color-code">RGB(255, 255, 255)</p>
+  </div>
+
+  <script>
+    function generateColor() {
+      // Generate random values for R, G, and B
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+
+      // Set the background color
+      document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+      // Display the RGB color code
+      document.getElementById("color-code").innerText = `RGB(${r}, ${g}, ${b})`;
+    }
+  </script>
+
+</body>
+</html>
